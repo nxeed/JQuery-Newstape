@@ -53,7 +53,7 @@ if (typeof Object.create !== "function") {
             if (base.options.mousewheel) {
                 base.$elem.bind('mousewheel.newstape', function(e) {
                     e.preventDefault();
-                    base.pos = (e.deltaY > 0) ? base.pos - base.options.mousewheelRate : base.pos + base.options.mousewheelRate;
+                    base.pos = (e.deltaY > 0) ? base.pos + base.options.mousewheelRate : base.pos - base.options.mousewheelRate;
                     base.move();
                 });
             }
