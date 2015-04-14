@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>JQuery Newstape by nxeed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">JQuery Newstape</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/nxeed/JQuery-Newstape" class="btn">View on GitHub</a>
+      <a href="https://github.com/nxeed/JQuery-Newstape/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nxeed/JQuery-Newstape/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jquery-newstape" class="anchor" href="#jquery-newstape" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery Newstape</h1>
+
+<p>Плагин для создания бегущей новостной ленты. Прост в использовании, поддерживает mousewheel и event.drag.</p>
+
+<h2>
+<a id="Установка" class="anchor" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Установка</h2>
+
+<p>Подключение скриптов</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c">&lt;!-- Если используете --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery.mousewheel<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c">&lt;!-- Если используете --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery.event.drag<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery.newstape<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>Пример разметки</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>newstape<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>newstape-content<span class="pl-pds">"</span></span>&gt;
+        Содержимое новостной ленты
+    &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>Пример стилей</p>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.newstape</span> {
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">400<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">overflow</span></span>: <span class="pl-c1">hidden</span>;
+}
+
+<span class="pl-e">.newstape-content</span> {
+    <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
+    <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">15<span class="pl-k">px</span></span>;
+}
+
+<span class="pl-e">.newstape-drag</span> {
+    <span class="pl-c1"><span class="pl-c1">cursor</span></span>: ns-resize;
+}</pre></div>
+
+<p>Инициализация</p>
+
+<div class="highlight highlight-html"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    $(<span class="pl-k">function</span>() {</span>
+<span class="pl-s1">        <span class="pl-k">var</span> newstapes <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>.newstape<span class="pl-pds">'</span></span>).newstape();</span>
+<span class="pl-s1">    });</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
+<h2>
+<a id="Настройка" class="anchor" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Настройка</h2>
+
+<div class="highlight highlight-html"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    $(<span class="pl-k">function</span>() {</span>
+<span class="pl-s1">        <span class="pl-k">var</span> newstapes <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>.newstape<span class="pl-pds">'</span></span>).newstape({</span>
+<span class="pl-s1">            <span class="pl-c">// период срабатывания таймера</span></span>
+<span class="pl-s1">            period<span class="pl-k">:</span> <span class="pl-c1">30</span>, </span>
+<span class="pl-s1">            <span class="pl-c">// на сколько пикселей смещается лента</span></span>
+<span class="pl-s1">            offset<span class="pl-k">:</span> <span class="pl-c1">1</span>, </span>
+<span class="pl-s1">            <span class="pl-c">// разрешить прокрутку колёсиком</span></span>
+<span class="pl-s1">            mousewheel<span class="pl-k">:</span> <span class="pl-c1">true</span>, </span>
+<span class="pl-s1">            <span class="pl-c">// разрешить "таскать" ленту</span></span>
+<span class="pl-s1">            dragable<span class="pl-k">:</span> <span class="pl-c1">true</span>, </span>
+<span class="pl-s1">            <span class="pl-c">// на сколько пикселей происходит смещение при прокрутке колёсиком</span></span>
+<span class="pl-s1">            mousewheelRate<span class="pl-k">:</span> <span class="pl-c1">30</span> </span>
+<span class="pl-s1">        });</span>
+<span class="pl-s1">    });</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/nxeed/JQuery-Newstape">JQuery Newstape</a> is maintained by <a href="https://github.com/nxeed">nxeed</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
