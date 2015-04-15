@@ -18,7 +18,7 @@ Markup
 ``` html
 <div class="newstape">
     <div class="newstape-content">
-        Содержимое новостной ленты
+        Content
     </div>
 </div>
 ```
