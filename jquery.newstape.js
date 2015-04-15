@@ -24,7 +24,6 @@ if (typeof Object.create !== "function") {
         dragDeltaYReduce: 0,
         timer: null,
         pos: 0,
-
         init: function(options, el) {
             var base = this;
 
@@ -32,9 +31,17 @@ if (typeof Object.create !== "function") {
             base.$content = $('.newstape-content', base.$elem);
 
             base.options = $.extend({}, $.fn.newstape.options, base.$elem.data(), options);
-            
-            base.height = base.$elem.outerHeight();
-            base.contentHeight = base.$content.outerHeight();
+
+            var heightRefresh = function() {
+                base.height = base.$elem.outerHeight();
+                base.contentHeight = base.$content.outerHeight();
+            };
+
+            if (base.options.heightSpy) {
+                setInterval(heightRefresh, 1000);
+            }
+
+            heightRefresh();
 
             var play = function() {
                 base.timer = setInterval(function() {
@@ -120,7 +127,8 @@ if (typeof Object.create !== "function") {
         offset: 1,
         mousewheel: true,
         dragable: true,
-        mousewheelRate: 30
+        mousewheelRate: 30,
+        heightSpy: true
     };
 
 }(jQuery, window, document));
