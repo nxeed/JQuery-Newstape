@@ -56,7 +56,7 @@ Settings
             period: 30, 
             // offset pixel count
             offset: 1, 
-            // mousewheel scroll
+            // mousewheel scrolling
             mousewheel: true, 
             // mousewheel offset pixel count
             mousewheelRate: 30, 
