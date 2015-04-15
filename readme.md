@@ -1,6 +1,6 @@
 JQuery Newstape
 ===================
-A plugin to create a running news feed. Easy to use, supports mousewheel and event.drag.
+Running news feed plugin. Easy to use with supports mousewheel and event.drag.
 
 Usage
 -------------
