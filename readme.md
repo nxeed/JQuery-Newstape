@@ -1,20 +1,20 @@
 JQuery Newstape
 ===================
-Плагин для создания бегущей новостной ленты. Прост в использовании, поддерживает mousewheel и event.drag.
+A plugin to create a running news feed. Easy to use, supports mousewheel and event.drag.
 
-Установка
+Usage
 -------------
-Подключение скриптов
+Scripts
 ``` html
-<script src="путь к jquery"></script>
-<!-- Если используете -->
-<script src="путь к jquery.mousewheel"></script>
-<!-- Если используете -->
-<script src="путь к jquery.event.drag"></script>
+<script src="path to jquery"></script>
+<!-- If you use "mousewheel" option -->
+<script src="path to jquery.mousewheel"></script>
+<!-- If you use "dragable" option -->
+<script src="path to jquery.event.drag"></script>
 
-<script src="путь к jquery.newstape"></script>
+<script src="path to jquery.newstape"></script>
 ```
-Пример разметки
+Markup
 ``` html
 <div class="newstape">
     <div class="newstape-content">
@@ -22,7 +22,7 @@ JQuery Newstape
     </div>
 </div>
 ```
-Пример стилей
+Styles
 ``` css
 .newstape {
     height: 400px;
@@ -38,7 +38,7 @@ JQuery Newstape
     cursor: ns-resize;
 }
 ```
-Инициализация
+Initialization
 ``` html
 <script>
     $(function() {
@@ -46,22 +46,22 @@ JQuery Newstape
     });
 </script>
 ```
-Настройка
+Settings
 -------------
 ``` html
 <script>
     $(function() {
         var newstapes = $('.newstape').newstape({
-            // период срабатывания таймера
+            // timer period
             period: 30, 
-            // на сколько пикселей смещается лента
+            // offset pixel count
             offset: 1, 
-            // разрешить прокрутку колёсиком
+            // mousewheel scroll
             mousewheel: true, 
-            // разрешить "таскать" ленту
-            dragable: true, 
-            // на сколько пикселей происходит смещение при прокрутке колёсиком
+            // mousewheel offset pixel count
             mousewheelRate: 30, 
+            // dragging tape content
+            dragable: true
         });
     });
 </script>

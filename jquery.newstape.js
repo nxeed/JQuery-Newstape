@@ -125,9 +125,8 @@ if (typeof Object.create !== "function") {
         period: 30,
         offset: 1,
         mousewheel: true,
-        dragable: true,
         mousewheelRate: 30,
-        heightSpy: true
+        dragable: true
     };
 
 }(jQuery, window, document));
