@@ -22,30 +22,30 @@
       <h1>
 <a id="jquery-newstape" class="anchor" href="#jquery-newstape" aria-hidden="true"><span class="octicon octicon-link"></span></a>JQuery Newstape</h1>
 
-<p>Плагин для создания бегущей новостной ленты. Прост в использовании, поддерживает mousewheel и event.drag.</p>
+<p>Running newsfeed widget</p>
 
 <h2>
-<a id="Установка" class="anchor" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Установка</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Подключение скриптов</p>
+<p>Scripts</p>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-c">&lt;!-- Если используете --&gt;</span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery.mousewheel<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-<span class="pl-c">&lt;!-- Если используете --&gt;</span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery.event.drag<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path to jquery<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c">&lt;!-- If you use "mousewheel" option --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path to jquery.mousewheel<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c">&lt;!-- If you use "dragable" option --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path to jquery.event.drag<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>путь к jquery.newstape<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path to jquery.newstape<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
-<p>Пример разметки</p>
+<p>Markup</p>
 
 <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>newstape<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>newstape-content<span class="pl-pds">"</span></span>&gt;
-        Содержимое новостной ленты
+        Content
     &lt;/<span class="pl-ent">div</span>&gt;
 &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<p>Пример стилей</p>
+<p>Styles</p>
 
 <div class="highlight highlight-css"><pre><span class="pl-e">.newstape</span> {
     <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">400<span class="pl-k">px</span></span>;
@@ -61,7 +61,7 @@
     <span class="pl-c1"><span class="pl-c1">cursor</span></span>: ns-resize;
 }</pre></div>
 
-<p>Инициализация</p>
+<p>Initialization</p>
 
 <div class="highlight highlight-html"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
 <span class="pl-s1">    $(<span class="pl-k">function</span>() {</span>
@@ -70,21 +70,21 @@
 <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h2>
-<a id="Настройка" class="anchor" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Настройка</h2>
+<a id="settings" class="anchor" href="#settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Settings</h2>
 
 <div class="highlight highlight-html"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
 <span class="pl-s1">    $(<span class="pl-k">function</span>() {</span>
 <span class="pl-s1">        <span class="pl-k">var</span> newstapes <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>.newstape<span class="pl-pds">'</span></span>).newstape({</span>
-<span class="pl-s1">            <span class="pl-c">// период срабатывания таймера</span></span>
+<span class="pl-s1">            <span class="pl-c">// timer period</span></span>
 <span class="pl-s1">            period<span class="pl-k">:</span> <span class="pl-c1">30</span>, </span>
-<span class="pl-s1">            <span class="pl-c">// на сколько пикселей смещается лента</span></span>
+<span class="pl-s1">            <span class="pl-c">// offset pixel count</span></span>
 <span class="pl-s1">            offset<span class="pl-k">:</span> <span class="pl-c1">1</span>, </span>
-<span class="pl-s1">            <span class="pl-c">// разрешить прокрутку колёсиком</span></span>
+<span class="pl-s1">            <span class="pl-c">// mousewheel scrolling</span></span>
 <span class="pl-s1">            mousewheel<span class="pl-k">:</span> <span class="pl-c1">true</span>, </span>
-<span class="pl-s1">            <span class="pl-c">// разрешить "таскать" ленту</span></span>
-<span class="pl-s1">            dragable<span class="pl-k">:</span> <span class="pl-c1">true</span>, </span>
-<span class="pl-s1">            <span class="pl-c">// на сколько пикселей происходит смещение при прокрутке колёсиком</span></span>
-<span class="pl-s1">            mousewheelRate<span class="pl-k">:</span> <span class="pl-c1">30</span> </span>
+<span class="pl-s1">            <span class="pl-c">// mousewheel offset pixel count</span></span>
+<span class="pl-s1">            mousewheelRate<span class="pl-k">:</span> <span class="pl-c1">30</span>, </span>
+<span class="pl-s1">            <span class="pl-c">// dragging tape content</span></span>
+<span class="pl-s1">            dragable<span class="pl-k">:</span> <span class="pl-c1">true</span></span>
 <span class="pl-s1">        });</span>
 <span class="pl-s1">    });</span>
 <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
