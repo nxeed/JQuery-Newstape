@@ -37,9 +37,8 @@ if (typeof Object.create !== "function") {
                 base.contentHeight = base.$content.outerHeight();
             };
 
-            if (base.options.heightSpy) {
-                setInterval(heightRefresh, 1000);
-            }
+            setInterval(heightRefresh, 1000);
+
 
             heightRefresh();
 
