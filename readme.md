@@ -8,20 +8,20 @@ Newstape is a really small jQuery text scroller plugin which automatically & ver
 
 How to use it:
 -------------
-1. Load jQuery library and the jQuery newstape plugin in your html page.
+Load jQuery library and the jQuery newstape plugin in your html page.
 ``` html
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="jquery.newstape.js"></script>
 ```
-2. Load the optional jQuery mousewheel plugin for mouse wheel support.
+Load the optional jQuery mousewheel plugin for mouse wheel support.
 ``` html
 <script src="jquery.mousewheel.min.js"></script>
 ```
-3. Load the optional jquery.event.drag plugin for drag & swipe support.
+Load the optional jquery.event.drag plugin for drag & swipe support.
 ``` html
 <script src="jquery.event.drag.min.js"></script>
 ```
-4. Create a basic news ticker as follow.
+Create a basic news ticker as follow.
 ``` html
 <div class="newstape">
   <div class="newstape-content">
@@ -49,7 +49,7 @@ How to use it:
   </div>
 </div>
 ```
-5. Add your own CSS styles to the news ticker.
+Add your own CSS styles to the news ticker.
 ``` css
 .newstape {
   background-color: #3BB0D6;
@@ -71,12 +71,12 @@ How to use it:
 
 .text-justify { text-align: justify; }
 ```
-6. Call the plugin to start the news ticker.
+Call the plugin to start the news ticker.
 ``` javascript
 $('.newstape').newstape();
 
 ```
-7. Default settings.
+Default settings.
 ``` javascript
 $('.newstape').newstape({
 
