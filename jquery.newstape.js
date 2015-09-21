@@ -1,8 +1,3 @@
-/*
- * JQuery Newstape v 1.0
- * Created by Nxeed | http://nxeed.tk
- */
-
 if (typeof Object.create !== "function") {
     Object.create = function(obj) {
         function F() {
@@ -36,9 +31,10 @@ if (typeof Object.create !== "function") {
                 base.height = base.$elem.outerHeight();
                 base.contentHeight = base.$content.outerHeight();
             };
-
-            setInterval(heightRefresh, 1000);
-
+ 
+            if (base.options.heightSpy) {
+                setInterval(heightRefresh, 1000);
+            }
 
             heightRefresh();
 
@@ -63,6 +59,12 @@ if (typeof Object.create !== "function") {
                     base.move();
                 });
             }
+
+            $('a', base.$elem).focus(function(e) {
+                base.$elem.scrollTop(0);
+                base.pos = base.height - $(this).position().top - $(this).outerHeight();
+                base.move();
+            });
 
             if (base.options.dragable) {
                 base.$elem.bind('dragstart.newstape', function(e, dd) {
@@ -125,8 +127,9 @@ if (typeof Object.create !== "function") {
         period: 30,
         offset: 1,
         mousewheel: true,
+        dragable: true,
         mousewheelRate: 30,
-        dragable: true
+        heightSpy: true
     };
 
 }(jQuery, window, document));
